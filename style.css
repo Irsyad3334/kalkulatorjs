@@ -1,0 +1,93 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    overflow: hidden; /* Menghindari scrollbar */
+    display: flex; /* Menggunakan flexbox */
+    justify-content: center; /* Menempatkan di tengah secara horizontal */
+    align-items: center; /* Menempatkan di tengah secara vertikal */
+    height: 100vh; /* Memastikan tinggi penuh viewport */
+    position: relative; /* Mengatur posisi relatif untuk latar belakang video */
+}
+
+.background-video {
+    position: fixed; /* Memastikan video tetap di belakang */
+    top: 0;
+    left: 0;
+    width: 100%; /* Menutupi seluruh layar */
+    height: 100%; /* Menutupi seluruh layar */
+    object-fit: cover; /* Memastikan video memenuhi layar */
+    z-index: -1; /* Memastikan video berada di belakang kalkulator */
+}
+
+.calculator {
+    background-color: rgba(46, 46, 46, 0.8); /* Warna latar belakang kalkulator agak transparan */
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    width: 400px; /* Lebar kalkulator */
+    height: 450px; /* Tinggi kalkulator yang diperpanjang lebih jauh */
+    padding: 10px; /* Menambahkan padding untuk memberi ruang */
+    position: relative; /* Mengatur posisi kalkulator */
+    z-index: 1; /* Memastikan kalkulator berada di atas video */
+}
+
+.display {
+    background-color: black;
+    color: white;
+    padding: 20px;
+    font-size: 24px;
+    text-align: right;
+    border-radius: 10px 10px 0 0;
+    height: 60px; /* Tinggi area tampilan */
+}
+
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.btn {
+    padding: 20px;
+    font-size: 18px;
+    border: none;
+    cursor: pointer;
+    background-color: #ddd;
+    color: black;
+    transition: background-color 0.3s;
+}
+
+.btn.operator {
+    background-color: orange;
+    color: white;
+}
+
+.btn:hover {
+    background-color: #ccc;
+}
+
+.btn.operator:hover {
+    background-color: darkorange;
+}
+
+.history {
+    margin-top: 10px; /* Jarak antara tombol dan riwayat */
+}
+
+.history-container {
+    display: none; /* Tersembunyi secara default */
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    padding: 10px;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    z-index: 2; /* Pastikan riwayat muncul di atas kalkulator */
+}
+
+.history-container ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
